@@ -1,7 +1,7 @@
 #include "SceneManager.hpp"
 #include "MainMenu.hpp"
-// #include "audio/SoundManager.hpp"
-// #include "input/InputManager.hpp"
+#include "../audio/SoundManager.hpp"
+#include "../input/InputManager.hpp"
 
 SceneManager::SceneManager(){
     MainMenu mainMenu;
@@ -12,8 +12,8 @@ SceneManager::SceneManager(){
 
 }
 void SceneManager::update() {
-    // inputManager.update();
-    // soundManager.update();
+    inputManager.update();
+    soundManager.update();
 }
 void SceneManager::render() {
 
