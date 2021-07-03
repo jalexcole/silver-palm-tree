@@ -15,7 +15,7 @@ SoundManager::SoundManager() {
 }
 
 
-void SoundManager::PlaySound(std::string path) {
+void SoundManager::playSound(std::string path) {
 
 }
 

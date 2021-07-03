@@ -8,7 +8,7 @@ class SoundManager {
   public:
     SoundManager();
     // static SoundManager& getInstance();
-    void PlaySound(std::string);
+    void playSound(std::string);
     void setMusic(std::string);
 
     void update();
