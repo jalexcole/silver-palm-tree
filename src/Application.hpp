@@ -4,7 +4,7 @@
 
 #include "input/InputManager.hpp"
 #include "audio/SoundManager.hpp"
-#include "SceneManager.hpp"
+#include "scenes/SceneManager.hpp"
 class Application
 {
 public:

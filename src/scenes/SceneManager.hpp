@@ -4,8 +4,8 @@
 // This controls the scenes and overall game states between screens
 // TODO: Convert this to a singleton instance
 
-#include "audio/SoundManager.hpp"
-#include "input/InputManager.hpp"
+// #include "audio/SoundManager.hpp"
+// #include "input/InputManager.hpp"
 
 
 class SceneManager
@@ -24,6 +24,6 @@ private:
 
 
   // These are to be the only two instances of these functions.
-  InputManager inputManager;
-  SoundManager soundManager;
+  // InputManager inputManager;
+  // SoundManager soundManager;
 };

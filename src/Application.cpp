@@ -2,8 +2,8 @@
 #include <string>
 #include "raylib.h"
 #include <iostream>
-#include "MainMenu.hpp"
-#include "SceneManager.hpp"
+// #include "MainMenu.hpp"
+#include "scenes/SceneManager.hpp"
 
 Application::Application()
 {
@@ -23,6 +23,14 @@ void Application::initialize()
 
 void Application::start()
 {
+
+    int screenHeight = GetScreenHeight();
+    int screenWidth = GetScreenWidth();
+    std::string path = "assets/vfx/background.png";
+    Image background = LoadImage(path.c_str());
+    Texture2D bgTexture = LoadTextureFromImage(background);
+    UnloadImage(background); // delete png from memory; 
+
     while (!WindowShouldClose()) // Detect window close button or ESC key
     {
         // Update
@@ -37,7 +45,7 @@ void Application::start()
         BeginDrawing();
 
         ClearBackground(BLACK);
-
+        DrawTexture(bgTexture, screenWidth/2 - bgTexture.width/2, screenHeight/2 - bgTexture.height/2, WHITE);
         render();
         DrawFPS(0, 0);
         EndDrawing();

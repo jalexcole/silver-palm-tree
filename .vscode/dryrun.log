@@ -1,0 +1,6 @@
+make Little-Turn-Game --dry-run --keep-going --print-directory
+make: Entering directory '/home/alex/Dropbox/dev/silver-palm-tree'
+ 
+make: 'Little-Turn-Game' is up to date.
+make: Leaving directory '/home/alex/Dropbox/dev/silver-palm-tree'
+ 
