@@ -4,10 +4,12 @@
 #include <iostream>
 // #include "MainMenu.hpp"
 #include "scenes/SceneManager.hpp"
+#include "audio/SoundManager.hpp"
 
 Application::Application()
 {
     // sceneManager = new SceneManager();
+    SoundManager* soundManager = SoundManager::getInstance();
 }
 
 void Application::initialize()
@@ -58,12 +60,11 @@ void Application::start()
     //--------------------------------------------------------------------------------------
 }
 
-void Application::render()
-{
+void Application::render(){
 }
 
-void Application::update()
-{
+void Application::update() {
+    // soundManager->update();
 }
 
 void Application::exit()

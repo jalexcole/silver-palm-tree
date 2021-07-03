@@ -6,8 +6,8 @@
 // TODO: Convert to Singleton
 class SoundManager {
   public:
-    SoundManager();
-    // static SoundManager& getInstance();
+    // SoundManager();
+    static SoundManager* getInstance();
     void playSound(std::string);
     void setMusic(std::string);
 
@@ -24,6 +24,6 @@ class SoundManager {
     Music music;
     Sound sound;
     float volume;
-    // static SoundManager* soundManager;
+    SoundManager* soundManager;
     
 };

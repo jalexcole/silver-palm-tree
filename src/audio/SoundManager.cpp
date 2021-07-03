@@ -1,19 +1,23 @@
 #include "SoundManager.hpp"
+#include "raylib.h"
 #include <string>
 #include <iostream>
 
+static SoundManager* getInstance() {
+    if (!soundManager){
+        soundManager = new SoundManager;
+        InitAudioDevice();
+    }
+    
+    return soundManager;
+}
 
-// static SoundManager& getInstance() {
-//     if (soundManager == nullptr){
-//         soundManager = new SoundManager;
-//     }
-//     // InitAudioDevice();
-//     return soundManager;
-// }
+
 SoundManager::SoundManager() {
     
 }
 
+static SoundManager *soundManager;
 
 void SoundManager::playSound(std::string path) {
 

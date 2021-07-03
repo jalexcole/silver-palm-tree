@@ -5,8 +5,8 @@
 class InputManager {
   public: 
 
-    // static InputManager& Get(); // Gives this class singleton properties.
-    InputManager();
+    static InputManager& getInstance(); // Gives this class singleton properties.
+    
     
     int keyPressed;
     // GamePad gamePad;
@@ -17,7 +17,8 @@ class InputManager {
     void update();
 
   private:
-    // static InputManager* inputManager;
+    InputManager();
+    static InputManager* inputManager;
 };
 
 class GamePad {
