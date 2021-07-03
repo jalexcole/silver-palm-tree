@@ -24,11 +24,11 @@
 .PHONY: all clean
 
 # Define required variables
-PROJECT_NAME       ?= raylib_game
+PROJECT_NAME       ?= Little-Turn-Game
 RAYLIB_VERSION     ?= 3.8.0
 RAYLIB_PATH        ?= C:/GitHub/raylib
 
-OUTPUT_PATH        ?= ../build
+OUTPUT_PATH        ?= build/.
 OUTPUT_TEMP_PATH   ?= ../temp
 
 # Define default options
@@ -154,7 +154,7 @@ EXAMPLE_RUNTIME_PATH   ?= $(RAYLIB_RELEASE_PATH)
 
 # Define default C compiler: gcc
 # NOTE: define g++ compiler if using C++
-CC = gcc
+CC = g++
 
 ifeq ($(PLATFORM),PLATFORM_DESKTOP)
     ifeq ($(PLATFORM_OS),OSX)
@@ -201,7 +201,7 @@ endif
 #  -std=gnu99           defines C language mode (GNU C from 1999 revision)
 #  -Wno-missing-braces  ignore invalid warning (GCC bug 53119)
 #  -D_DEFAULT_SOURCE    use with -std=c99 on Linux and PLATFORM_WEB, required for timespec
-CFLAGS += -Wall -std=c99 -D_DEFAULT_SOURCE -Wno-missing-braces
+CFLAGS += -Wall -std=c++11 -D_DEFAULT_SOURCE -Wno-missing-braces -O0
 
 ifeq ($(BUILD_MODE),DEBUG)
     CFLAGS += -g
@@ -250,7 +250,7 @@ ifeq ($(PLATFORM),PLATFORM_WEB)
     # --memory-init-file 0       # to avoid an external memory initialization code file (.mem)
     # --preload-file resources   # specify a resources folder for data compilation
     # --source-map-base          # allow debugging in browser with source map
-    CFLAGS += -s USE_GLFW=3 -s TOTAL_MEMORY=67108864 -s FORCE_FILESYSTEM=1 --preload-file resources
+    CFLAGS += -s USE_GLFW=3 -s TOTAL_MEMORY=67108864 -s FORCE_FILESYSTEM=1 --preload-file assets
 
     # Define a custom shell .html and output extension
     CFLAGS += --shell-file $(RAYLIB_PATH)/src/shell.html
@@ -372,13 +372,7 @@ ifeq ($(PLATFORM),PLATFORM_WEB)
 endif
 
 # Define all source files required
-PROJECT_SOURCE_FILES ?= \
-    raylib_game.c \
-    screen_logo.c \
-    screen_title.c \
-    screen_options.c \
-    screen_gameplay.c \
-    screen_ending.c
+PROJECT_SOURCE_FILES ?= src/*.cpp
 
 # Define all object files from source files
 OBJS = $(patsubst %.c, %.o, $(PROJECT_SOURCE_FILES))
