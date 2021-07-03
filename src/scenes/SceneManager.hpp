@@ -11,7 +11,7 @@
 class SceneManager
 {
 public:
-  SceneManager();
+  // SceneManager();
   void update();
   void render();
   void changeScene();

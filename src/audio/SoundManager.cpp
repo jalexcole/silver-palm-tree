@@ -3,9 +3,9 @@
 #include <string>
 #include <iostream>
 
-static SoundManager* getInstance() {
-    if (!soundManager){
-        soundManager = new SoundManager;
+SoundManager* getInstance() {
+    if (soundManager != nullptr) {
+        soundManager = new SoundManager();
         InitAudioDevice();
     }
     

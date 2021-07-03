@@ -10,7 +10,7 @@ make Little-Turn-Game
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sat Jul  3 13:14:01 2021
+# Make data base, printed on Sat Jul  3 17:18:29 2021
 
 # Variables
 
@@ -82,9 +82,9 @@ DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
 VSCODE_VERBOSE_LOGGING = true
 # makefile (from 'Makefile', line 57)
 BUILD_MODE = RELEASE
-# makefile (from 'Makefile', line 375)
-PROJECT_SOURCE_FILES = src/*.cpp
-# makefile (from 'Makefile', line 378)
+# makefile (from 'Makefile', line 377)
+PROJECT_SOURCE_FILES = $(wildcard src/*.cpp src/audio/*.cpp src/input/*.cpp src/graphics/*.cpp src/scenes/*.cpp)
+# makefile (from 'Makefile', line 380)
 OBJS = $(patsubst %.c, %.o, $(PROJECT_SOURCE_FILES))
 # environment
 MANAGERPID = 1582
@@ -107,6 +107,7 @@ GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
 GJS_DEBUG_OUTPUT = stderr
 # environment
+ 
 SESSION_MANAGER = local/pop-os:@/tmp/.ICE-unix/2354,unix/pop-os:/tmp/.ICE-unix/2354
 # makefile (from 'Makefile', line 114)
 RAYLIB_PATH = $(realpath $(RAYLIB_PREFIX))
@@ -168,7 +169,7 @@ LOGNAME = alex
 APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
 # automatic
 +F = $(notdir $+)
-# makefile (from 'Makefile', line 386)
+# makefile (from 'Makefile', line 388)
 MAKEFILE_PARAMS = $(PROJECT_NAME)
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
@@ -289,7 +290,7 @@ LANG = C
 # environment
 VSCODE_PID = 43993
 # variable set hash-table stats:
-# Load=137/1024=13%, Rehash=0, Collisions=33/280=12%
+# Load=137/1024=13%, Rehash=0, Collisions=41/306=13%
 
 # Pattern-specific Variable Values
 
@@ -297,28 +298,38 @@ VSCODE_PID = 43993
 
 # Directories
 
- 
-# . (device 2049, inode 12846742): 15 files, no impossibilities.
+# src/scenes (device 2049, inode 13901844): 8 files, no impossibilities.
+# . (device 2049, inode 12846742): 14 files, no impossibilities.
+# src/input (device 2049, inode 13901815): 4 files, no impossibilities.
+# src/graphics (device 2049, inode 13901842): 3 files, no impossibilities.
+# src/audio (device 2049, inode 13901824): 4 files, no impossibilities.
 # src (device 2049, inode 12846834): 9 files, no impossibilities.
 
-# 24 files, no impossibilities in 2 directories.
+# 42 files, no impossibilities in 6 directories.
 
 # Implicit Rules
 
 %.o: %.c
-#  recipe to execute (from 'Makefile', line 401):
+#  recipe to execute (from 'Makefile', line 403):
 	$(CC) -c $< -o $@ $(CFLAGS) $(INCLUDE_PATHS) -D$(PLATFORM)
 
 # 1 implicit rules, 0 (0.0%) terminal.
 
 # Files
 
+# Not a target:
+src/scenes/MainMenu.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2021-07-03 13:03:29.092889202
+#  File has been updated.
+#  Successfully updated.
+
 all:
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 392):
+#  recipe to execute (from 'Makefile', line 394):
 	$(MAKE) $(MAKEFILE_PARAMS)
 
 .PHONY: all clean
@@ -327,9 +338,29 @@ all:
 #  File has not been updated.
 
 # Not a target:
+src/scenes/Scene.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2021-07-03 13:03:29.092889202
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+src/scenes/SceneManager.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2021-07-03 14:25:16.767497113
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+.SUFFIXES:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2021-07-03 13:11:54.102874899
+#  Last modified 2021-07-03 17:18:01.203242717
 #  File has been updated.
 #  Successfully updated.
 
@@ -339,11 +370,18 @@ Makefile:
 #  Modification time never checked.
 #  File has not been updated.
 
+# Not a target:
+src/audio/SoundManager.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2021-07-03 17:14:11.764153799
+#  File has been updated.
+#  Successfully updated.
+
 run:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 432):
+#  recipe to execute (from 'Makefile', line 434):
 	make
 	./$(TARGET)
 
@@ -352,7 +390,7 @@ clean:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 410):
+#  recipe to execute (from 'Makefile', line 412):
 		find . -type f -executable -delete
 		rm -fv *.o
 	@echo Cleaning done
@@ -367,44 +405,72 @@ src/main.cpp:
 # Not a target:
 src/Application.cpp:
 #  Implicit rule search has been done.
-#  Last modified 2021-07-03 13:03:04.196984577
+#  Last modified 2021-07-03 17:02:27.386955569
 #  File has been updated.
 #  Successfully updated.
 
-Little-Turn-Game: src/main.cpp src/Application.cpp
+Little-Turn-Game: src/main.cpp src/Application.cpp src/audio/SoundManager.cpp src/input/InputManager.cpp src/scenes/Scene.cpp src/scenes/SceneManager.cpp src/scenes/MainMenu.cpp
 #  Command line target.
 #  Implicit rule search has not been done.
-#  Last modified 2021-07-03 13:03:06.552975573
+#  Implicit/static pattern stem: ''
+#  File does not exist.
 #  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'Makefile', line 396):
+#  Needs to be updated (-q is set).
+# automatic
+# @ := Little-Turn-Game
+# automatic
+# % := 
+# automatic
+# * := 
+# automatic
+# + := src/main.cpp src/Application.cpp src/audio/SoundManager.cpp src/input/InputManager.cpp src/scenes/Scene.cpp src/scenes/SceneManager.cpp src/scenes/MainMenu.cpp
+# automatic
+# | := 
+# automatic
+# < := src/main.cpp
+# automatic
+# ^ := src/main.cpp src/Application.cpp src/audio/SoundManager.cpp src/input/InputManager.cpp src/scenes/Scene.cpp src/scenes/SceneManager.cpp src/scenes/MainMenu.cpp
+# automatic
+# ? := src/main.cpp src/Application.cpp src/audio/SoundManager.cpp src/input/InputManager.cpp src/scenes/Scene.cpp src/scenes/SceneManager.cpp src/scenes/MainMenu.cpp
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=23/34=68%
+#  recipe to execute (from 'Makefile', line 398):
 	$(CC) -o $(PROJECT_NAME)$(EXT) $(OBJS) $(CFLAGS) $(INCLUDE_PATHS) $(LDFLAGS) $(LDLIBS) -D$(PLATFORM)
 
+# Not a target:
+src/input/InputManager.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2021-07-03 15:08:15.942317175
+#  File has been updated.
+#  Successfully updated.
+
 # files hash-table stats:
-# Load=10/1024=1%, Rehash=0, Collisions=0/27=0%
+# Load=15/1024=1%, Rehash=0, Collisions=0/38=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 34 / storage = 314 B / avg = 9 B
-# current buf: size = 8162 B / used = 314 B / count = 34 / avg = 9 B
+# strcache buffers: 1 (0) / strings = 54 / storage = 652 B / avg = 12 B
+# current buf: size = 8162 B / used = 652 B / count = 54 / avg = 12 B
 
-# strcache performance: lookups = 50 / hit rate = 32%
+# strcache performance: lookups = 78 / hit rate = 30%
 # hash-table stats:
-# Load=34/8192=0%, Rehash=0, Collisions=2/50=4%
-# Finished Make data base on Sat Jul  3 13:14:01 2021
+# Load=54/8192=1%, Rehash=0, Collisions=6/78=8%
+# Finished Make data base on Sat Jul  3 17:18:29 2021
 
 # make[1]: Leaving directory '/home/alex/Dropbox/dev/silver-palm-tree'
+ 
 # GNU Make 4.2.1
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2016 Free Software Foundation, Inc.
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
+ 
 
-# Make data base, printed on Sat Jul  3 13:14:01 2021
+# Make data base, printed on Sat Jul  3 17:18:29 2021
 
 # Variables
 
@@ -478,9 +544,10 @@ DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
 VSCODE_VERBOSE_LOGGING = true
 # makefile (from 'Makefile', line 57)
 BUILD_MODE = RELEASE
-# makefile (from 'Makefile', line 375)
-PROJECT_SOURCE_FILES = src/*.cpp
-# makefile (from 'Makefile', line 378)
+# makefile (from 'Makefile', line 377)
+PROJECT_SOURCE_FILES = $(wildcard src/*.cpp src/audio/*.cpp src/input/*.cpp src/graphics/*.cpp src/scenes/*.cpp)
+# makefile (from 'Makefile', line 380)
+ 
 OBJS = $(patsubst %.c, %.o, $(PROJECT_SOURCE_FILES))
 # environment
 MANAGERPID = 1582
@@ -564,7 +631,7 @@ LOGNAME = alex
 APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
 # automatic
 +F = $(notdir $+)
-# makefile (from 'Makefile', line 386)
+# makefile (from 'Makefile', line 388)
 MAKEFILE_PARAMS = $(PROJECT_NAME)
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
@@ -586,6 +653,7 @@ SHLVL = 0
 CC = g++
 # environment
 GNOME_SHELL_SESSION_MODE = pop
+ 
 # makefile (from 'Makefile', line 51)
 RAYLIB_H_INSTALL_PATH = $(DESTDIR)/include
 # environment
@@ -691,21 +759,30 @@ VSCODE_PID = 43993
 
 # Directories
 
-# . (device 2049, inode 12846742): 15 files, no impossibilities.
+# src/scenes (device 2049, inode 13901844): 8 files, no impossibilities.
+# . (device 2049, inode 12846742): 14 files, no impossibilities.
+# src/input (device 2049, inode 13901815): 4 files, no impossibilities.
+# src/graphics (device 2049, inode 13901842): 3 files, no impossibilities.
+# src/audio (device 2049, inode 13901824): 4 files, no impossibilities.
 # src (device 2049, inode 12846834): 9 files, no impossibilities.
- 
 
-# 24 files, no impossibilities in 2 directories.
+# 42 files, no impossibilities in 6 directories.
 
 # Implicit Rules
 
 %.o: %.c
-#  recipe to execute (from 'Makefile', line 401):
+#  recipe to execute (from 'Makefile', line 403):
 	$(CC) -c $< -o $@ $(CFLAGS) $(INCLUDE_PATHS) -D$(PLATFORM)
 
 # 1 implicit rules, 0 (0.0%) terminal.
 
 # Files
+
+# Not a target:
+src/scenes/MainMenu.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 all:
 #  Phony target (prerequisite of .PHONY).
@@ -714,7 +791,7 @@ all:
 #  Implicit/static pattern stem: ''
 #  File does not exist.
 #  File has been updated.
-#  Successfully updated.
+#  Needs to be updated (-q is set).
 # automatic
 # @ := all
 # automatic
@@ -726,6 +803,7 @@ all:
 # automatic
 # | := 
 # automatic
+ 
 # < := 
 # automatic
 # ^ := 
@@ -733,10 +811,22 @@ all:
 # ? := 
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=4/14=29%
-#  recipe to execute (from 'Makefile', line 392):
+#  recipe to execute (from 'Makefile', line 394):
 	$(MAKE) $(MAKEFILE_PARAMS)
 
 .PHONY: all clean
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+src/scenes/Scene.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+src/scenes/SceneManager.cpp:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -750,7 +840,7 @@ all:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2021-07-03 13:11:54.102874899
+#  Last modified 2021-07-03 17:18:01.203242717
 #  File has been updated.
 #  Successfully updated.
 
@@ -760,11 +850,17 @@ Makefile:
 #  Modification time never checked.
 #  File has not been updated.
 
+# Not a target:
+src/audio/SoundManager.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
 run:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 432):
+#  recipe to execute (from 'Makefile', line 434):
 	make
 	./$(TARGET)
 
@@ -773,7 +869,7 @@ clean:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 410):
+#  recipe to execute (from 'Makefile', line 412):
 		find . -type f -executable -delete
 		rm -fv *.o
 	@echo Cleaning done
@@ -790,27 +886,34 @@ src/Application.cpp:
 #  Modification time never checked.
 #  File has not been updated.
 
-Little-Turn-Game: src/main.cpp src/Application.cpp
+Little-Turn-Game: src/main.cpp src/Application.cpp src/audio/SoundManager.cpp src/input/InputManager.cpp src/scenes/Scene.cpp src/scenes/SceneManager.cpp src/scenes/MainMenu.cpp
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 396):
+#  recipe to execute (from 'Makefile', line 398):
 	$(CC) -o $(PROJECT_NAME)$(EXT) $(OBJS) $(CFLAGS) $(INCLUDE_PATHS) $(LDFLAGS) $(LDLIBS) -D$(PLATFORM)
+ 
+
+# Not a target:
+src/input/InputManager.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # files hash-table stats:
-# Load=10/1024=1%, Rehash=0, Collisions=0/27=0%
+# Load=15/1024=1%, Rehash=0, Collisions=0/38=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 34 / storage = 314 B / avg = 9 B
-# current buf: size = 8162 B / used = 314 B / count = 34 / avg = 9 B
+# strcache buffers: 1 (0) / strings = 54 / storage = 652 B / avg = 12 B
+# current buf: size = 8162 B / used = 652 B / count = 54 / avg = 12 B
 
-# strcache performance: lookups = 51 / hit rate = 33%
+# strcache performance: lookups = 78 / hit rate = 30%
 # hash-table stats:
-# Load=34/8192=0%, Rehash=0, Collisions=2/51=4%
-# Finished Make data base on Sat Jul  3 13:14:01 2021
+# Load=54/8192=1%, Rehash=0, Collisions=6/78=8%
+# Finished Make data base on Sat Jul  3 17:18:29 2021
 
  

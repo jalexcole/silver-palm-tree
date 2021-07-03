@@ -372,7 +372,9 @@ ifeq ($(PLATFORM),PLATFORM_WEB)
 endif
 
 # Define all source files required
-PROJECT_SOURCE_FILES ?= src/*.cpp
+# PROJECT_SOURCE_FILES ?= src/*.cpp
+
+PROJECT_SOURCE_FILES ?= $(wildcard src/*.cpp src/audio/*.cpp src/input/*.cpp src/graphics/*.cpp src/scenes/*.cpp)
 
 # Define all object files from source files
 OBJS = $(patsubst %.c, %.o, $(PROJECT_SOURCE_FILES))

@@ -3,14 +3,14 @@
 #include "../audio/SoundManager.hpp"
 #include "../input/InputManager.hpp"
 
-SceneManager::SceneManager(){
-    MainMenu mainMenu;
+// SceneManager::SceneManager() {
+//     MainMenu mainMenu;
     
-    addScene(mainMenu);
+//     addScene(mainMenu);
 
 
 
-}
+// }
 void SceneManager::update() {
     inputManager.update();
     soundManager.update();

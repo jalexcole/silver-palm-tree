@@ -9,7 +9,7 @@
 Application::Application()
 {
     // sceneManager = new SceneManager();
-    SoundManager* soundManager = SoundManager::getInstance();
+    // SoundManager* soundManager = SoundManager::getInstance();
 }
 
 void Application::initialize()
@@ -17,7 +17,7 @@ void Application::initialize()
     // SetConfigFlags(FLAG_FULLSCREEN_MODE);
     SetConfigFlags(FLAG_WINDOW_HIGHDPI);
     InitWindow(1280, 720, "Little Turn Game");
-    InitAudioDevice();
+    // InitAudioDevice();
     SetTargetFPS(600); // Set our game to run at 60 frames-per-second
 
     
