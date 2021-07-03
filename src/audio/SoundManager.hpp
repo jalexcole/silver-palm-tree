@@ -23,6 +23,6 @@ class SoundManager {
     Music music;
     Sound sound;
     float volume;
-    SoundManager* soundManager;
+    static SoundManager* soundManager;
     
 };

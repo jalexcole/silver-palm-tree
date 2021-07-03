@@ -4,7 +4,7 @@
 #include <iostream>
 
 SoundManager* getInstance() {
-    if (soundManager != nullptr) {
+    if (!soundManager) {
         soundManager = new SoundManager();
         InitAudioDevice();
     }
@@ -13,11 +13,9 @@ SoundManager* getInstance() {
 }
 
 
-SoundManager::SoundManager() {
-    
-}
+SoundManager::SoundManager() {}
 
-static SoundManager *soundManager;
+static SoundManager* soundManager;
 
 void SoundManager::playSound(std::string path) {
 

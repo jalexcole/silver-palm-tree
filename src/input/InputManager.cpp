@@ -41,9 +41,6 @@ int GamePad::getGamepadAxisCount(int gamepad) {
 float GamePad::getGamepadAxisMovement(int gamepad, int axis) {
     return GetGamepadAxisMovement(gamepad, axis);
 }
-int GamePad::setGamepadMapping(std::string) {
-
-}
 
 
 
