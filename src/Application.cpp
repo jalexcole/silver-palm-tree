@@ -13,6 +13,7 @@ Application::Application()
     // sceneManager = new SceneManager();
     // Singleton *s1 = Singleton::getInstance();
     Application::soundManager = SoundManager::getInstance();
+    Application::sceneManager = SceneManager::getInstance();
 }
 
 void Application::initialize()
@@ -22,7 +23,13 @@ void Application::initialize()
     InitWindow(1280, 720, "Little Turn Game");
     InitAudioDevice();
     SetTargetFPS(60); // Set our game to run at 60 frames-per-second
-    soundManager->initialize();
+    
+    testConditions();
+}
+
+void Application::testConditions() {
+    soundManager->addTrack("assets/sfx/HeroicMinority.mp3");
+    soundManager->addTrack("assets/sfx/Littlewargame (Original Soundtrack).mp3");
     
 }
 
@@ -67,6 +74,7 @@ void Application::render(){
 }
 
 void Application::update() {
+    sceneManager->update();
     soundManager->update();
     
 }

@@ -11,19 +11,24 @@
 class SceneManager
 {
 public:
-  // SceneManager();
+  static SceneManager* getInstance();
+
   void update();
   void render();
   void changeScene();
+  void nextScene();
   void addScene(Scene2D &scene);
 
 private:
+  SceneManager();
+  static SceneManager *sceneManager;
+
   std::vector<Scene2D> scenes;
   Scene2D currentScene;
   int sceneIndex;
-
+  
 
   // These are to be the only two instances of these functions.
-  InputManager inputManager;
-  SoundManager soundManager;
+  // InputManager inputManager;
+  // SoundManager soundManager;
 };

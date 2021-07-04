@@ -18,9 +18,11 @@ public:
   void exit();
 
 private:
-  // Singleton&  MySingleton = Singleton::instance();
+  
   // InputManager* inputManager = new InputManager;
   SoundManager *soundManager;
-  // SceneManager* sceneManager;
+  SceneManager* sceneManager;
+  void testConditions();
+
   void changeState(int desiredState);
 };

@@ -3,17 +3,17 @@
 #include "../audio/SoundManager.hpp"
 #include "../input/InputManager.hpp"
 
-// SceneManager::SceneManager() {
-//     MainMenu mainMenu;
-    
-//     addScene(mainMenu);
+SceneManager::SceneManager() {}
+SceneManager* SceneManager::getInstance() {
+    if (!sceneManager) {
+        sceneManager = new SceneManager();
+    }
+    return sceneManager;
+}
+SceneManager* SceneManager::sceneManager = 0;
 
-
-
-// }
 void SceneManager::update() {
-    inputManager.update();
-    soundManager.update();
+    
 }
 void SceneManager::render() {
 

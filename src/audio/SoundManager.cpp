@@ -1,48 +1,74 @@
 #include "SoundManager.hpp"
 #include "raylib.h"
-#include <string>
-#include <iostream>
 
 
-// Singleton Stuff Do Not Touch
 SoundManager* SoundManager::getInstance() {
     if (!soundManager) {
         soundManager = new SoundManager();
-        
-        
     }
-    
     return soundManager;
 }
 
-SoundManager::SoundManager() {}
 SoundManager* SoundManager::soundManager = 0;
-// End of Singleton Stuff Do Not Touch
 
-void SoundManager::initialize() {
-    setMusic("assets/sfx/HeroicMinority.mp3");
+SoundManager::SoundManager() {
+    // initialize();
+    trackIndex = -1;
 }
 
-void SoundManager::addTrack(std::string trackName) {
-    // tracks.push_back(trackName);
+void SoundManager::addTrack(std::string trackPath) {
+    trackPaths.push_back(trackPath);
+
+    if (trackIndex == -1) {
+        trackIndex = 0;
+        loadTrack(trackIndex);
+    }
 }
 
-void setTrack(std::string trackName) {
-
+void SoundManager::addTracks(std::vector<std::string> paths) {
+    clearTracks();
+    trackPaths = paths;
+    trackIndex = 0;
+    loadTrack(trackIndex);
 }
 
-
-void SoundManager::playSound(std::string path) {
-
+void SoundManager::loadTrack(int index) {
+    if (!trackPaths.empty()) {
+        music = LoadMusicStream(trackPaths[index].c_str());
+        PlayMusicStream(music);
+    }
 }
 
-void SoundManager::setMusic(std::string path) {
-    music = LoadMusicStream(path.c_str());
-    PlayMusicStream(music);
-    std::cout << "Wanting to play: " + path << std::endl;
+void SoundManager::nextTrack() {
+    if (trackIndex >= trackPaths.size() - 1) {
+        trackIndex = 0;
+    } else {
+        trackIndex++;
+    }
+
+    loadTrack(trackIndex);
+}
+
+void SoundManager::clearTracks() {
+    trackIndex = -1;
+    trackPaths.clear();
+}
+
+bool SoundManager::isTrackFinished() {
+    float trackLength = GetMusicTimeLength(music);   // Get music time length (in seconds)
+    float runTime = GetMusicTimePlayed(music);   // Get current music time played (in seconds)
+    return runTime > (trackLength - 0.5);
 }
 
 void SoundManager::update() {
-    UpdateMusicStream(music);
+    switch(trackIndex) {
+        case -1:
+            break;
+        default:
+            if (isTrackFinished()) {
+                nextTrack();
+            }
+            UpdateMusicStream(music);
+            break;
+    }
 }
-

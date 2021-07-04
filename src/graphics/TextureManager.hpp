@@ -7,13 +7,17 @@
 
 class TextureManager {
   private:
+    TextureManager();
+    TextureManager* textureManager;
+
     std::vector<Texture2D> textures;
     void loadTextures();
     void unloadTextures();
     std::map<std::string, Texture2D&> textureMap;
 
   public:
-    TextureManager();
+    TextureManager* getInstance();
+
     void loadImagePaths(std::vector<std::string> &paths);
     void loadImages(std::vector<Image> &images);
 
