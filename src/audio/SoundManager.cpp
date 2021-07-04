@@ -55,9 +55,7 @@ void SoundManager::clearTracks() {
 }
 
 bool SoundManager::isTrackFinished() {
-    float trackLength = GetMusicTimeLength(music);   // Get music time length (in seconds)
-    float runTime = GetMusicTimePlayed(music);   // Get current music time played (in seconds)
-    return runTime > (trackLength - 0.5);
+    return  GetMusicTimePlayed(music) > (GetMusicTimeLength(music) - 0.5);
 }
 
 void SoundManager::update() {
