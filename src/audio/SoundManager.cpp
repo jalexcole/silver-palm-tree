@@ -3,19 +3,34 @@
 #include <string>
 #include <iostream>
 
-SoundManager* getInstance() {
+
+// Singleton Stuff Do Not Touch
+SoundManager* SoundManager::getInstance() {
     if (!soundManager) {
         soundManager = new SoundManager();
-        InitAudioDevice();
+        
+        
     }
     
     return soundManager;
 }
 
-
 SoundManager::SoundManager() {}
+SoundManager* SoundManager::soundManager = 0;
+// End of Singleton Stuff Do Not Touch
 
-static SoundManager* soundManager;
+void SoundManager::initialize() {
+    setMusic("assets/sfx/HeroicMinority.mp3");
+}
+
+void SoundManager::addTrack(std::string trackName) {
+    // tracks.push_back(trackName);
+}
+
+void setTrack(std::string trackName) {
+
+}
+
 
 void SoundManager::playSound(std::string path) {
 

@@ -20,7 +20,7 @@ public:
 private:
   // Singleton&  MySingleton = Singleton::instance();
   // InputManager* inputManager = new InputManager;
-  SoundManager* soundManager;
+  SoundManager *soundManager;
   // SceneManager* sceneManager;
   void changeState(int desiredState);
 };

@@ -13,7 +13,7 @@ class Scene2D {
 
   public:
 
-    Scene2D();
+    
     virtual void update(float deltaTime);
     virtual void draw();
     
