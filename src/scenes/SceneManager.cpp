@@ -3,9 +3,11 @@
 #include "../audio/SoundManager.hpp"
 #include "../input/InputManager.hpp"
 #include "Scene.hpp"
+#include <iostream>
 
 SceneManager::SceneManager() {
-    sceneIndex = -1;
+    SceneManager::sceneIndex = -1;
+    std::vector<Scene*> scenes;
 }
 SceneManager* SceneManager::getInstance() {
     if (!sceneManager) {
@@ -20,7 +22,7 @@ void SceneManager::update() {
         case -1:
             break;
         default:
-            scenes[sceneIndex].update();
+            scenes[sceneIndex]->update();
     }
 }
 void SceneManager::render() {
@@ -28,13 +30,13 @@ void SceneManager::render() {
         case -1:
             break;
         default:
-            scenes[sceneIndex].draw();
+            scenes[sceneIndex]->draw();
     }
 }
 void SceneManager::changeScene() {
 
 }
-void SceneManager::addScene(Scene scene) {
+void SceneManager::addScene(Scene* scene) {
     scenes.push_back(scene);
     if (sceneIndex == -1) {
         sceneIndex = 0;
@@ -46,4 +48,7 @@ void SceneManager::nextScene() {
         sceneIndex = 0;
     }
     sceneIndex++;
+
+    std::cout << "Scene count: " << scenes.size() << std::endl;
+    scenes[sceneIndex]->initialize();
 }

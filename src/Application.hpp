@@ -2,9 +2,10 @@
 #include <string>
 #include <vector>
 
-#include "input/InputManager.hpp"
-#include "audio/SoundManager.hpp"
-#include "scenes/SceneManager.hpp"
+// #include "input/InputManager.hpp"
+// #include "audio/SoundManager.hpp"
+// #include "scenes/SceneManager.hpp"
+#include "beam.hpp"
 class Application
 {
 public:

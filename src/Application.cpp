@@ -1,10 +1,13 @@
 #include "Application.hpp"
-#include <string>
 #include "raylib.h"
+#include "beam.hpp"
+
 #include <iostream>
-// #include "MainMenu.hpp"
-#include "scenes/SceneManager.hpp"
-#include "audio/SoundManager.hpp"
+#include <vector>
+#include <string>
+
+#include "myscenes/RaylibSplashScene.hpp"
+#include "myscenes/MainMenu.hpp"
 
 Application::Application()
 {
@@ -27,19 +30,26 @@ void Application::initialize()
 
 void Application::testConditions()
 {
-    soundManager->addTrack("assets/sfx/HeroicMinority.mp3");
-    soundManager->addTrack("assets/sfx/Littlewargame (Original Soundtrack).mp3");
+    // soundManager->addTrack("assets/sfx/HeroicMinority.mp3");
+    // soundManager->addTrack("assets/sfx/Littlewargame (Original Soundtrack).mp3");
+    
+    // std::vector<Scene> scenes = {RaylibSplashScene raylibSplashScene()};
+    
+    sceneManager->addScene(new RaylibSplashScene());
+    sceneManager->addScene(new MainMenu());
+    
+
 }
 
 void Application::start()
 {
 
-    int screenHeight = GetScreenHeight();
-    int screenWidth = GetScreenWidth();
-    std::string path = "assets/vfx/background.png";
-    Image background = LoadImage(path.c_str());
-    Texture2D bgTexture = LoadTextureFromImage(background);
-    UnloadImage(background); // delete png from memory;
+    // int screenHeight = GetScreenHeight();
+    // int screenWidth = GetScreenWidth();
+    // std::string path = "assets/vfx/background.png";
+    // Image background = LoadImage(path.c_str());
+    // Texture2D bgTexture = LoadTextureFromImage(background);
+    // UnloadImage(background); // delete png from memory;
 
     while (!WindowShouldClose()) // Detect window close button or ESC key
     {
@@ -55,7 +65,7 @@ void Application::start()
         BeginDrawing();
 
         ClearBackground(BLACK);
-        DrawTexture(bgTexture, screenWidth / 2 - bgTexture.width / 2, screenHeight / 2 - bgTexture.height / 2, WHITE);
+        // DrawTexture(bgTexture, screenWidth / 2 - bgTexture.width / 2, screenHeight / 2 - bgTexture.height / 2, WHITE);
         render();
         DrawFPS(0, 0);
         EndDrawing();
@@ -83,6 +93,3 @@ void Application::exit()
 {
 }
 
-void Application::changeState(int desiredState)
-{
-}

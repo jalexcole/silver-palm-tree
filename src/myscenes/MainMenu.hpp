@@ -1,8 +1,9 @@
 #pragma once
 #include "raylib.h"
-#include "../scenes/Scene.hpp"
-#include "../audio/SoundManager.hpp"
-#include "../scenes/SceneManager.hpp"
+#include "../beam.hpp"
+
+
+
 class MainMenu : public Scene {
   public:
     
@@ -10,7 +11,8 @@ class MainMenu : public Scene {
     MainMenu();
 
     void update();
-    void render();
+    void draw();
+    void initialize();
 
   private:
     // Image background;

@@ -1,5 +1,7 @@
 #pragma once
 #include <vector>
+#include <map>
+#include <string>
 #include "Scene.hpp"
 
 
@@ -16,18 +18,14 @@ public:
   void render();
   void changeScene();
   void nextScene();
-  void addScene(Scene scene);
+  void addScene(Scene* scene);
 
 private:
   SceneManager();
   static SceneManager *sceneManager;
 
-  std::vector<Scene> scenes;
-  // Scene currentScene;
+  // std::map<std::string sceneName, long index> sceneTable;
+  std::vector<Scene*> scenes;
   long sceneIndex;
   
-
-  // These are to be the only two instances of these functions.
-  // InputManager inputManager;
-  // SoundManager soundManager;
 };

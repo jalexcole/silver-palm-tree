@@ -1,22 +1,32 @@
 #include "MainMenu.hpp"
 #include "raylib.h"
 #include <string>
+#include <vector>
 
 MainMenu::MainMenu() {
+    soundManager = SoundManager::getInstance();
+    sceneManager = SceneManager::getInstance();
+    
+}
+
+void MainMenu::initialize() {
     screenHeight = GetScreenHeight();
     screenWidth = GetScreenWidth();
     
     setBackground();
-    // soundTracks.push_back("assets/sfx/HeroicMinority.mp3");
-    // soundManager->setMusic(music);
-}
+    std::vector<std::string> soundTracks = {"assets/sfx/HeroicMinority.mp3"};
+    soundTracks.push_back("assets/sfx/Littlewargame (Original Soundtrack).mp3");
+    
 
-void MainMenu::render() {
-    DrawTexture(bgTexture, screenWidth/2 - bgTexture.width/2, screenHeight/2 - bgTexture.height/2, WHITE);
+    soundManager->addTracks(soundTracks);
 }
 
 void MainMenu::update() {
     
+}
+
+void MainMenu::draw() {
+    DrawTexture(bgTexture, screenWidth/2 - bgTexture.width/2, screenHeight/2 - bgTexture.height/2, WHITE);
 }
 
 void MainMenu::setBackground() {

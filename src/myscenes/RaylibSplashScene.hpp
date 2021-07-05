@@ -5,16 +5,19 @@
 
 
 class RaylibSplashScene : public Scene {
-public:
+  public:
     RaylibSplashScene();
     void update();
     void draw();
+    void initialize();
 
-private:
+  private:
     SceneManager *sceneManager;
     SoundManager *soundManager;
     float runTime;
     void loadMusic();
     Texture2D texture;
+    int screenWidth;
+    int screenHeight;
 
 };
