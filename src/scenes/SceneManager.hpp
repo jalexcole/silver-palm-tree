@@ -19,6 +19,7 @@ public:
   void changeScene();
   void nextScene();
   void addScene(Scene* scene);
+  void exit();
 
 private:
   SceneManager();

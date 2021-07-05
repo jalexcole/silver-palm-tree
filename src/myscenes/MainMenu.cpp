@@ -14,7 +14,10 @@ void MainMenu::initialize() {
     screenWidth = GetScreenWidth();
     
     setBackground();
-    std::vector<std::string> soundTracks = {"assets/sfx/HeroicMinority.mp3"};
+    std::vector<std::string> soundTracks;
+
+    soundTracks.push_back("assets/sfx/DarkWinds.mp3");
+    soundTracks.push_back("assets/sfx/HeroicMinority.mp3");
     soundTracks.push_back("assets/sfx/Littlewargame (Original Soundtrack).mp3");
     
 

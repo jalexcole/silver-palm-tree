@@ -52,3 +52,7 @@ void SceneManager::nextScene() {
     std::cout << "Scene count: " << scenes.size() << std::endl;
     scenes[sceneIndex]->initialize();
 }
+
+void SceneManager::exit() {
+    WindowShouldClose();
+}

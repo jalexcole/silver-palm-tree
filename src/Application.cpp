@@ -88,8 +88,3 @@ void Application::update()
     sceneManager->update();
     soundManager->update();
 }
-
-void Application::exit()
-{
-}
-

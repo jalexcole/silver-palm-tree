@@ -2,7 +2,19 @@
 #include "raylib.h"
 
 
-InputManager::InputManager() {}
+InputManager* InputManager::getInstance() {
+    if (!inputManager) {
+        inputManager = new InputManager();
+    }
+    return inputManager;
+}
+
+InputManager* InputManager::inputManager = 0;
+
+
+InputManager::InputManager() {
+    
+}
 
 void InputManager::update() {
 

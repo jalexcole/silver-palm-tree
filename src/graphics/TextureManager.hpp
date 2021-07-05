@@ -11,7 +11,7 @@ public:
 
   void loadImagePaths(std::vector<std::string> &paths);
   void loadImages(std::vector<Image> &images);
-
+  
 private:
   TextureManager();
   TextureManager *textureManager;
