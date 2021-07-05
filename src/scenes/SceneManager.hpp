@@ -1,8 +1,7 @@
 #pragma once
 #include <vector>
 #include "Scene.hpp"
-// This controls the scenes and overall game states between screens
-// TODO: Convert this to a singleton instance
+
 
 #include "../audio/SoundManager.hpp"
 #include "../input/InputManager.hpp"
@@ -17,15 +16,15 @@ public:
   void render();
   void changeScene();
   void nextScene();
-  void addScene(Scene2D &scene);
+  void addScene(Scene scene);
 
 private:
   SceneManager();
   static SceneManager *sceneManager;
 
-  std::vector<Scene2D> scenes;
-  Scene2D currentScene;
-  int sceneIndex;
+  std::vector<Scene> scenes;
+  // Scene currentScene;
+  long sceneIndex;
   
 
   // These are to be the only two instances of these functions.

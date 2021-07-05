@@ -1,8 +1,8 @@
 #pragma once
 #include "raylib.h"
-#include "Scene.hpp"
+#include "../scenes/Scene.hpp"
 
-class MainMenu : public Scene2D {
+class MainMenu : public Scene {
   public:
     int screenWidth;
     int screenHeight;

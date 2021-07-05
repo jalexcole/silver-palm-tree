@@ -1,10 +1,14 @@
 #include "Scene.hpp"
 
 
-void Scene2D::update(float deltaTime) {
+
+
+
+
+
+void Scene::update() {
 
 }
-void Scene2D::draw() {
-
+void Scene::draw()
+{
 }
-

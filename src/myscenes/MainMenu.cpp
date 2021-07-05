@@ -7,7 +7,7 @@ MainMenu::MainMenu() {
     screenWidth = GetScreenWidth();
     
     setBackground();
-    soundTracks.push_back("assets/sfx/HeroicMinority.mp3");
+    // soundTracks.push_back("assets/sfx/HeroicMinority.mp3");
     // soundManager->setMusic(music);
 }
 

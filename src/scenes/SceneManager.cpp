@@ -1,9 +1,12 @@
 #include "SceneManager.hpp"
-#include "MainMenu.hpp"
+
 #include "../audio/SoundManager.hpp"
 #include "../input/InputManager.hpp"
+#include "Scene.hpp"
 
-SceneManager::SceneManager() {}
+SceneManager::SceneManager() {
+    sceneIndex = -1;
+}
 SceneManager* SceneManager::getInstance() {
     if (!sceneManager) {
         sceneManager = new SceneManager();
@@ -13,14 +16,34 @@ SceneManager* SceneManager::getInstance() {
 SceneManager* SceneManager::sceneManager = 0;
 
 void SceneManager::update() {
-    
+    switch (sceneIndex) {
+        case -1:
+            break;
+        default:
+            scenes[sceneIndex].update();
+    }
 }
 void SceneManager::render() {
-
+    switch (sceneIndex) {
+        case -1:
+            break;
+        default:
+            scenes[sceneIndex].draw();
+    }
 }
 void SceneManager::changeScene() {
 
 }
-void SceneManager::addScene(Scene2D &scene) {
+void SceneManager::addScene(Scene scene) {
     scenes.push_back(scene);
+    if (sceneIndex == -1) {
+        sceneIndex = 0;
+    }   
+}
+
+void SceneManager::nextScene() {
+    if (sceneIndex >= scenes.size() - 1) {
+        sceneIndex = 0;
+    }
+    sceneIndex++;
 }

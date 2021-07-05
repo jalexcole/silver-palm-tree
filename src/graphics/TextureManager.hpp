@@ -4,21 +4,20 @@
 #include <map>
 #include "raylib.h"
 
+class TextureManager
+{
+public:
+  TextureManager *getInstance();
 
-class TextureManager {
-  private:
-    TextureManager();
-    TextureManager* textureManager;
+  void loadImagePaths(std::vector<std::string> &paths);
+  void loadImages(std::vector<Image> &images);
 
-    std::vector<Texture2D> textures;
-    void loadTextures();
-    void unloadTextures();
-    std::map<std::string, Texture2D&> textureMap;
+private:
+  TextureManager();
+  TextureManager *textureManager;
 
-  public:
-    TextureManager* getInstance();
-
-    void loadImagePaths(std::vector<std::string> &paths);
-    void loadImages(std::vector<Image> &images);
-
+  std::vector<Texture2D> textures;
+  void loadTextures();
+  void unloadTextures();
+  std::map<std::string, Texture2D &> textureMap;
 };

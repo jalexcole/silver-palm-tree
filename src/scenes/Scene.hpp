@@ -3,19 +3,9 @@
 #include <vector>
 #include "raylib.h"
 
-class Scene2D {
+class Scene {
   
-
-  protected:
-    std::vector<std::string> soundTracks;
-    std::vector<Image> images;
-    Camera2D camera;
-
   public:
-
-    
-    virtual void update(float deltaTime);
+    virtual void update();
     virtual void draw();
-    
-    std::vector<std::string> getSoundTracks();
 };
