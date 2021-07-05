@@ -63,10 +63,11 @@ void SoundManager::update() {
         case -1:
             break;
         default:
+            UpdateMusicStream(music);
             if (isTrackFinished()) {
                 nextTrack();
             }
-            UpdateMusicStream(music);
+            
             break;
     }
 }

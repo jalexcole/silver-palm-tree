@@ -1,13 +1,7 @@
 #include "Scene.hpp"
 
-
-
-
-
-
-
-void Scene::update() {
-
+void Scene::update()
+{
 }
 void Scene::draw()
 {

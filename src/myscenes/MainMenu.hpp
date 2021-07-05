@@ -1,11 +1,11 @@
 #pragma once
 #include "raylib.h"
 #include "../scenes/Scene.hpp"
-
+#include "../audio/SoundManager.hpp"
+#include "../scenes/SceneManager.hpp"
 class MainMenu : public Scene {
   public:
-    int screenWidth;
-    int screenHeight;
+    
 
     MainMenu();
 
@@ -14,8 +14,12 @@ class MainMenu : public Scene {
 
   private:
     // Image background;
-    // SoundManager soundManager;
+    SceneManager* sceneManager;
+    SoundManager* soundManager;
+    int screenWidth;
+    int screenHeight;
     Texture2D bgTexture;
+    void inititalize();
     void setBackground();
     void checkInput();
     void selectUp();

@@ -201,7 +201,7 @@ endif
 #  -std=gnu99           defines C language mode (GNU C from 1999 revision)
 #  -Wno-missing-braces  ignore invalid warning (GCC bug 53119)
 #  -D_DEFAULT_SOURCE    use with -std=c99 on Linux and PLATFORM_WEB, required for timespec
-CFLAGS += -Wall -std=c++11 -D_DEFAULT_SOURCE -Wno-missing-braces -O0
+CFLAGS += -Wall -Wextra -std=c++17 -D_DEFAULT_SOURCE -Wno-missing-braces -O0
 
 ifeq ($(BUILD_MODE),DEBUG)
     CFLAGS += -g
@@ -375,7 +375,7 @@ endif
 # Define all source files required
 # PROJECT_SOURCE_FILES ?= src/*.cpp
 
-PROJECT_SOURCE_FILES ?= $(wildcard src/*.cpp src/audio/*.cpp src/input/*.cpp src/graphics/*.cpp src/scenes/*.cpp)
+PROJECT_SOURCE_FILES ?= $(wildcard src/*.cpp src/audio/*.cpp src/input/*.cpp src/graphics/*.cpp src/scenes/*.cpp src/ecs/*.cpp)
 
 # Define all object files from source files
 OBJS = $(patsubst %.c, %.o, $(PROJECT_SOURCE_FILES))
