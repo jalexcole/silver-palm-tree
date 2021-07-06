@@ -8,6 +8,7 @@
 SceneManager::SceneManager() {
     SceneManager::sceneIndex = -1;
     std::vector<Scene*> scenes;
+    
 }
 SceneManager* SceneManager::getInstance() {
     if (!sceneManager) {
@@ -40,7 +41,10 @@ void SceneManager::addScene(Scene* scene) {
     scenes.push_back(scene);
     if (sceneIndex == -1) {
         sceneIndex = 0;
-    }   
+    }
+    // std::cout << "SceneName: " << scene->getSceneName() << std::endl;
+    // sceneMap[scene->getClassName()] = sceneIndex;
+
 }
 
 void SceneManager::nextScene() {

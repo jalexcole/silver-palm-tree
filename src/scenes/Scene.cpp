@@ -7,10 +7,12 @@ void Scene::draw()
 {
 }
 
-Scene::Scene() {
+
+void Scene::initialize() {
 
 }
 
-// void Scene::initialize() {
+Scene::Scene() {
+    
+}
 
-// }

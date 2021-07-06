@@ -11,8 +11,7 @@
 
 Application::Application()
 {
-    // sceneManager = new SceneManager();
-    // Singleton *s1 = Singleton::getInstance();
+
     Application::soundManager = SoundManager::getInstance();
     Application::sceneManager = SceneManager::getInstance();
 }
@@ -23,34 +22,18 @@ void Application::initialize()
     SetConfigFlags(FLAG_WINDOW_HIGHDPI);
     InitWindow(1280, 720, "Little Turn Game");
     InitAudioDevice();
-    SetTargetFPS(6000); // Set our game to run at 60 frames-per-second
+    SetTargetFPS(144); // Set our game to run at 60 frames-per-second
 
     testConditions();
 }
 
 void Application::testConditions()
 {
-    // soundManager->addTrack("assets/sfx/HeroicMinority.mp3");
-    // soundManager->addTrack("assets/sfx/Littlewargame (Original Soundtrack).mp3");
-    
-    // std::vector<Scene> scenes = {RaylibSplashScene raylibSplashScene()};
-    
     sceneManager->addScene(new RaylibSplashScene());
     sceneManager->addScene(new MainMenu());
-    
-
 }
 
-void Application::start()
-{
-
-    // int screenHeight = GetScreenHeight();
-    // int screenWidth = GetScreenWidth();
-    // std::string path = "assets/vfx/background.png";
-    // Image background = LoadImage(path.c_str());
-    // Texture2D bgTexture = LoadTextureFromImage(background);
-    // UnloadImage(background); // delete png from memory;
-
+void Application::start() {
     while (!WindowShouldClose()) // Detect window close button or ESC key
     {
         // Update

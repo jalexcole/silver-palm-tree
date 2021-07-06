@@ -21,6 +21,7 @@ class MainMenu : public Scene {
     int screenWidth;
     int screenHeight;
     Texture2D bgTexture;
+    Font font;
     void inititalize();
     void setBackground();
     void checkInput();

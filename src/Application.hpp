@@ -2,9 +2,6 @@
 #include <string>
 #include <vector>
 
-// #include "input/InputManager.hpp"
-// #include "audio/SoundManager.hpp"
-// #include "scenes/SceneManager.hpp"
 #include "beam.hpp"
 class Application
 {
@@ -16,14 +13,10 @@ public:
 
   void render();
   void update();
-  void exit();
 
 private:
-  
-  // InputManager* inputManager = new InputManager;
-  SoundManager *soundManager;
+  SoundManager* soundManager;
   SceneManager* sceneManager;
   void testConditions();
 
-  void changeState(int desiredState);
 };

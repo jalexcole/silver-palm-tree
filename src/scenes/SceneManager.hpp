@@ -1,6 +1,6 @@
 #pragma once
 #include <vector>
-#include <map>
+#include <unordered_map>
 #include <string>
 #include "Scene.hpp"
 
@@ -25,7 +25,7 @@ private:
   SceneManager();
   static SceneManager *sceneManager;
 
-  // std::map<std::string sceneName, long index> sceneTable;
+  std::unordered_map<std::string, long> sceneTable;
   std::vector<Scene*> scenes;
   long sceneIndex;
   

@@ -1,7 +1,8 @@
 #pragma once
-#include "../scenes/Scene.hpp"
-#include "../scenes/SceneManager.hpp"
+#include "../beam.hpp"
 #include "raylib.h"
+
+#include <string>
 
 
 class RaylibSplashScene : public Scene {
@@ -10,6 +11,7 @@ class RaylibSplashScene : public Scene {
     void update();
     void draw();
     void initialize();
+    
 
   private:
     SceneManager *sceneManager;
