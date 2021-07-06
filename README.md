@@ -14,7 +14,7 @@ _Copyright (c) 2014-2021 Ramon Santamaria ([@raysan5](https://twitter.com/raysan
 
 -----------------------------------
 
-## $(Game Title)
+## $(Little Turn Game)
 
 ![$(Game Title)](screenshots/screenshot000.png "$(Game Title)")
 
@@ -24,7 +24,7 @@ $(Your Game Description)
 
 ### Features
 
- - $(Game Feature 01)
+ - $(It doesnt work)
  - $(Game Feature 02)
  - $(Game Feature 03)
 
