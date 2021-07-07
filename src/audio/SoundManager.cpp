@@ -40,7 +40,7 @@ void SoundManager::loadTrack(int index) {
 }
 
 void SoundManager::nextTrack() {
-    if (trackIndex >= trackPaths.size() - 1) {
+    if (trackIndex >= (int) trackPaths.size() - 1) {
         trackIndex = 0;
     } else {
         trackIndex++;

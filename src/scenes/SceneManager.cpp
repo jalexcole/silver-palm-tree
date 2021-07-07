@@ -48,7 +48,7 @@ void SceneManager::addScene(Scene* scene) {
 }
 
 void SceneManager::nextScene() {
-    if (sceneIndex >= scenes.size() - 1) {
+    if (sceneIndex >= (int) scenes.size() - 1) {
         sceneIndex = 0;
     }
     sceneIndex++;
