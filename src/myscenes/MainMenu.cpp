@@ -9,6 +9,9 @@ MainMenu::MainMenu()
     sceneManager = SceneManager::getInstance();
     
     font = LoadFontEx("assets/fonts/RINGM___.TTF", 32, 0, 250);
+    selectedIndex = 0;
+    options.push_back("Play");
+    options.push_back("Exit");
 }
 
 void MainMenu::initialize()
@@ -20,14 +23,15 @@ void MainMenu::initialize()
     std::vector<std::string> soundTracks;
 
     soundTracks.push_back("assets/sfx/DarkWinds.mp3");
-    soundTracks.push_back("assets/sfx/HeroicMinority.mp3");
+    // soundTracks.push_back("assets/sfx/HeroicMinority.mp3");
     soundTracks.push_back("assets/sfx/Littlewargame (Original Soundtrack).mp3");
 
     soundManager->addTracks(soundTracks);
 }
 
 void MainMenu::update()
-{
+{   
+    checkInput();
 }
 
 void MainMenu::draw()
@@ -39,7 +43,22 @@ void MainMenu::draw()
     int fontSize = 35;
     DrawTextEx(font, title.c_str(), fontPosition, fontSize, 0, BLACK);
     
-    
+    int baseHeight = 100;
+        // DrawText(name.c_str(), 50, 400, 25, LIGHTGRAY);
+        // DrawLine(45, (baseHeight + 25), 200, (baseHeight + 25), BLACK);
+
+        
+    for (int i = 0; i < options.size(); i++) {
+        Vector2 position = {40, ((baseHeight + 40) + i * 30)};
+        if (i == selectedIndex) {
+            Vector2 position = {40, ((baseHeight + 40) + i * 30)};
+            DrawTextEx(font, options[i].c_str(), position, 32, 0, BLACK);
+
+        } else {
+            Vector2 position = {40, ((baseHeight + 40) + i * 30)};
+            DrawTextEx(font, options[i].c_str(), position, 28, 0, BLACK);
+        }
+    }
 }
 
 void MainMenu::setBackground()
@@ -70,25 +89,35 @@ void MainMenu::checkInput()
 
 void MainMenu::selectUp()
 {
-    // if (selectedIndex > 0) {
-    //     selectedIndex--;
-    // } else {
-    //     selectedIndex = options.size() - 1;
-    // }
+    if (selectedIndex > 0) {
+        selectedIndex--;
+    } else {
+        selectedIndex = options.size() - 1;
+    }
 }
 
 void MainMenu::selectDown()
 {
-    //     if (selectedIndex >= options.size() - 1) {
-    //     selectedIndex = 0;
-    // } else {
-    //     selectedIndex++;
-    // }
+    if (selectedIndex >= options.size() - 1) {
+        selectedIndex = 0;
+    } else {
+        selectedIndex++;
+    }
 }
 
 void MainMenu::select()
 {
     // selected = selectedIndex;
+    switch (selectedIndex) {
+        case 0:
+            sceneManager->nextScene();
+            break;
+        case 1:
+            sceneManager->exit();
+            break;
+        default:
+            break;
+    }
 }
 
 void MainMenu::reset()

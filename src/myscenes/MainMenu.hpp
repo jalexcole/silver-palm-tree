@@ -16,6 +16,10 @@ class MainMenu : public Scene {
 
   private:
     // Image background;
+    int selectedIndex; // index of selectded option
+    std::vector<std::string> options;
+    
+
     SceneManager* sceneManager;
     SoundManager* soundManager;
     int screenWidth;

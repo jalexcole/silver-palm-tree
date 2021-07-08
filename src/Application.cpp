@@ -8,6 +8,7 @@
 
 #include "myscenes/RaylibSplashScene.hpp"
 #include "myscenes/MainMenu.hpp"
+#include "myscenes/MyGame.hpp"
 
 Application::Application()
 {
@@ -31,6 +32,7 @@ void Application::testConditions()
 {
     sceneManager->addScene(new RaylibSplashScene());
     sceneManager->addScene(new MainMenu());
+    sceneManager->addScene(new MyGame());
 }
 
 void Application::start() {

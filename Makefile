@@ -218,7 +218,7 @@ else
 endif
 
 # Additional flags for compiler (if desired)
-#CFLAGS += -Wextra -Wmissing-prototypes -Wstrict-prototypes
+# CFLAGS += -Wextra -Wmissing-prototypes -Wstrict-prototypes
 ifeq ($(PLATFORM),PLATFORM_DESKTOP)
     ifeq ($(PLATFORM_OS),LINUX)
         ifeq ($(RAYLIB_LIBTYPE),STATIC)
