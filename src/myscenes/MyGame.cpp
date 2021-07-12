@@ -4,21 +4,27 @@
 MyGame::MyGame() {
     // screenHeight = GetW();
     screenWidth = GetScreenWidth();
+    screenHeight = GetScreenHeight();
     MyGame::coordinator.Init();
 
 }
 
 void MyGame::initialize() {
-    int length = 128;
-    int height = 64;
+    int length = 1280;
+    int height = 720;
 
     int size = 128;
+    
 
-    for (int i = 0; i < height; i++) {
-        for (int j = 0; j < length; j++) {
-            
+    for (int i = 0; i < screenHeight; i += size) {
+        for (int j = 0; j < screenWidth; j += size) {
+            Rectangle rectangle = {i, j, size, size};
+            rectangleBoard.push_back(rectangle);
         }
+        
     }
+
+    
 }
 
 void MyGame::update() {
@@ -26,21 +32,34 @@ void MyGame::update() {
 }
 
 void MyGame::draw() {
-    // Vector2 size = {128, 128};
+    int size = 4;
     
-    for (int i = 0; i < 1280; i++) {
-        for (int j = 0; j < 720; j++) {
+
+    for (int j = 0; j < screenHeight; j += size) {
+        for (int i = 0; i < screenWidth; i += size) {
+            // if ((i + i * j) % 2 == 0) {
+            //     color = GRAY;
+            // } else {
+            //     color = BLUE;
+            // }
+            // Rectangle rectangle = {i, j, size, size};
+            // rectangleBoard.push_back(rectangle);
+            unsigned char r = GetRandomValue(0, 255);
+            unsigned char g = GetRandomValue(0, 255);
+            unsigned char b = GetRandomValue(0, 255);
+            unsigned char a = GetRandomValue(0, 255);
+
+            color = {r, g, b, a};
+            
+            DrawRectangle(i, j, size, size, color);
+        }
         
-        if ( (int) (i + j * 720) % 2 == 0) {
-            color = GRAY;
-        } else {
-            color = BLUE;
-        }
-        DrawRectangle(i, j, 1, 1, color);
-
-        }
     }
+    
+    // for (int i = 0; i < rectangleBoard.size(); i++) {
+    //     DrawRectangleRec(rectangleBoard.at(i), color);
+    // }
 
-    DrawLine(0, 360, 1280, 360, LIME);
+    
     
 }

@@ -16,7 +16,7 @@ private:
     SoundManager* soundManager;
     Color color;
     void checkInput();
-    std::vector<std::vector<Rectangle>> rectangleBoard;
+    std::vector<Rectangle> rectangleBoard;
     
 };
 
