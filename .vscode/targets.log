@@ -1,6 +1,7 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 make Little-Turn-Game
 # make[1]: Entering directory '/home/alex/Dropbox/dev/silver-palm-tree'
+ 
 # GNU Make 4.2.1
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2016 Free Software Foundation, Inc.
@@ -8,7 +9,7 @@ make Little-Turn-Game
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu Jul  8 16:33:03 2021
+# Make data base, printed on Mon Jul 12 09:01:42 2021
 
 # Variables
 
@@ -61,7 +62,7 @@ OPTIMIZATION := -O0
 # makefile (from 'Makefile', line 225)
 CFLAGS = -Wall -Wextra -std=c++17 -D_DEFAULT_SOURCE -Wno-missing-braces $(OPTIMIZATION) -s -O1 -D_DEFAULT_SOURCE
 # environment
-JOURNAL_STREAM = 8:52572
+JOURNAL_STREAM = 8:46677
 # environment
 XDG_CONFIG_DIRS = /etc/xdg/xdg-pop:/etc/xdg
 # makefile (from 'Makefile', line 1)
@@ -71,9 +72,13 @@ MAKEFILE_LIST :=  Makefile
 # environment
 IM_CONFIG_PHASE = 1
 # environment
+DEBUG = WARN
+# environment
 USERNAME = alex
 # environment
 MAKELEVEL := 1
+# environment
+MANDATORY_PATH = /usr/share/gconf/pop.mandatory.path
 # environment
 XDG_DATA_DIRS = /usr/share/pop:/home/alex/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share
 # environment
@@ -87,7 +92,7 @@ PROJECT_SOURCE_FILES = $(wildcard src/*.cpp src/audio/*.cpp src/input/*.cpp src/
 # makefile (from 'Makefile', line 382)
 OBJS = $(patsubst %.c, %.o, $(PROJECT_SOURCE_FILES))
 # environment
-MANAGERPID = 1567
+MANAGERPID = 1665
 # environment
 LESSOPEN = | /usr/bin/lesspipe %s
 # environment
@@ -99,7 +104,7 @@ OUTPUT_TEMP_PATH = ../temp
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
-PATH = /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+PATH = /home/alex/.local/bin:/home/alex/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
 # makefile (from 'Makefile', line 75)
 UNAMEOS = $(shell uname)
 # environment
@@ -107,7 +112,7 @@ GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
 GJS_DEBUG_OUTPUT = stderr
 # environment
-SESSION_MANAGER = local/pop-os:@/tmp/.ICE-unix/2299,unix/pop-os:/tmp/.ICE-unix/2299
+SESSION_MANAGER = local/cesium:@/tmp/.ICE-unix/2544,unix/cesium:/tmp/.ICE-unix/2544
 # makefile (from 'Makefile', line 115)
 RAYLIB_PATH = $(realpath $(RAYLIB_PREFIX))
 # environment
@@ -117,9 +122,9 @@ XDG_MENU_PREFIX = gnome-
 # environment
 VSCODE_LOG_STACK = false
 # environment
-VSCODE_CRASH_REPORTER_START_OPTIONS = {"companyName":"Microsoft","productName":"VSCode","submitURL":"appcenter://code?aid=fba07a4d-84bd-4fc8-a125-9640fc8ce171&uid=1da83201-7911-475f-a98c-4e0945a8c764&iid=1da83201-7911-475f-a98c-4e0945a8c764&sid=1da83201-7911-475f-a98c-4e0945a8c764","uploadToServer":true}
+VSCODE_CRASH_REPORTER_START_OPTIONS = {"companyName":"Microsoft","productName":"VSCode","submitURL":"appcenter://code?aid=fba07a4d-84bd-4fc8-a125-9640fc8ce171&uid=2a5b41f3-115b-447c-a551-d5be6679f9ef&iid=2a5b41f3-115b-447c-a551-d5be6679f9ef&sid=2a5b41f3-115b-447c-a551-d5be6679f9ef","uploadToServer":true}
 # environment
-INVOCATION_ID = af6987f921be463dbb6591fd29bf82c7
+INVOCATION_ID = b871033c46c042328bbaa50e32ab6098
 # makefile (from 'Makefile', line 305)
 LDFLAGS = -L. -L$(RAYLIB_INSTALL_PATH) -L$(RAYLIB_RELEASE_PATH) -L$(RAYLIB_PATH)
 # makefile (from 'Makefile', line 329)
@@ -135,7 +140,7 @@ XDG_SESSION_DESKTOP = pop
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 3702
+GIO_LAUNCHED_DESKTOP_FILE_PID = 12057
 # automatic
 %F = $(notdir $%)
 # environment
@@ -149,7 +154,7 @@ PWD = /home/alex/Dropbox/dev/silver-palm-tree
 # default
 .LOADED := 
 # environment
-SSH_AGENT_PID = 2076
+SSH_AGENT_PID = 2257
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = pop:GNOME
 # environment
@@ -193,7 +198,7 @@ GNOME_SHELL_SESSION_MODE = pop
 # makefile (from 'Makefile', line 52)
 RAYLIB_H_INSTALL_PATH = $(DESTDIR)/include
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-1f91db3f-d378-4a8c-9532-6456cf471015.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-0c76011c-ff40-4fa1-8842-5f414f613a87.sock
 # default
 MAKE_VERSION := 4.2.1
 # environment
@@ -240,6 +245,8 @@ LC_PAPER = en_US.UTF-8
 EXAMPLE_RUNTIME_PATH = $(RAYLIB_RELEASE_PATH)
 # environment
 QT_ACCESSIBILITY = 1
+# environment
+DEFAULTS_PATH = /usr/share/gconf/pop.default.path
 # makefile (from 'Makefile', line 38)
 PLATFORM = PLATFORM_DESKTOP
 # 'override' directive
@@ -273,6 +280,7 @@ CHROME_DESKTOP = code-url-handler.desktop
 # makefile (from 'Makefile', line 55)
 RAYLIB_LIBTYPE = STATIC
 # environment
+ 
 WINDOWPATH = 2
 # default
 .INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
@@ -283,14 +291,13 @@ LC_IDENTIFICATION = en_US.UTF-8
 # environment
 LC_ADDRESS = en_US.UTF-8
 # environment
- 
 GIO_LAUNCHED_DESKTOP_FILE = /usr/share/applications/code.desktop
 # environment
 LANG = C
 # environment
-VSCODE_PID = 3702
+VSCODE_PID = 12057
 # variable set hash-table stats:
-# Load=138/1024=13%, Rehash=0, Collisions=41/308=13%
+# Load=141/1024=14%, Rehash=0, Collisions=41/311=13%
 
 # Pattern-specific Variable Values
 
@@ -298,16 +305,16 @@ VSCODE_PID = 3702
 
 # Directories
 
-# src/scenes (device 2049, inode 12190549): 6 files, no impossibilities.
-# . (device 2049, inode 11797336): 14 files, no impossibilities.
-# src/myscenes (device 2049, inode 12190544): 7 files, no impossibilities.
-# src/input (device 2049, inode 12190541): 4 files, no impossibilities.
-# src/graphics (device 2049, inode 12061997): 3 files, no impossibilities.
-# src/audio (device 2049, inode 12061941): 4 files, no impossibilities.
-# src (device 2049, inode 12061931): 13 files, no impossibilities.
-# src/ecs (device 2049, inode 12061952): 11 files, no impossibilities.
+# src/scenes (device 2051, inode 11797295): 6 files, no impossibilities.
+# . (device 2051, inode 11797276): 14 files, no impossibilities.
+# src/myscenes (device 2051, inode 11797310): 8 files, no impossibilities.
+# src/input (device 2051, inode 11797297): 4 files, no impossibilities.
+# src/graphics (device 2051, inode 11797294): 3 files, no impossibilities.
+# src/audio (device 2051, inode 11797306): 4 files, no impossibilities.
+# src (device 2051, inode 11797281): 13 files, no impossibilities.
+# src/ecs (device 2051, inode 11797302): 11 files, no impossibilities.
 
-# 62 files, no impossibilities in 8 directories.
+# 63 files, no impossibilities in 8 directories.
 
 # Implicit Rules
 
@@ -335,21 +342,21 @@ all:
 # Not a target:
 src/scenes/Scene.cpp:
 #  Implicit rule search has been done.
-#  Last modified 2021-07-06 18:56:53.407989
+#  Last modified 2021-07-06 18:56:53
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 src/myscenes/MainMenu.cpp:
 #  Implicit rule search has been done.
-#  Last modified 2021-07-08 16:31:47.799218442
+#  Last modified 2021-07-09 09:29:08
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 src/scenes/SceneManager.cpp:
 #  Implicit rule search has been done.
-#  Last modified 2021-07-06 18:58:18.103555201
+#  Last modified 2021-07-06 18:58:18
 #  File has been updated.
 #  Successfully updated.
 
@@ -362,14 +369,14 @@ src/scenes/SceneManager.cpp:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2021-07-08 16:15:42.622933552
+#  Last modified 2021-07-09 09:29:08
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 src/myscenes/RaylibSplashScene.cpp:
 #  Implicit rule search has been done.
-#  Last modified 2021-07-06 18:56:53.407989
+#  Last modified 2021-07-06 18:56:53
 #  File has been updated.
 #  Successfully updated.
 
@@ -382,7 +389,7 @@ src/myscenes/RaylibSplashScene.cpp:
 # Not a target:
 src/audio/SoundManager.cpp:
 #  Implicit rule search has been done.
-#  Last modified 2021-07-06 18:58:41.959433231
+#  Last modified 2021-07-06 18:58:41
 #  File has been updated.
 #  Successfully updated.
 
@@ -407,22 +414,29 @@ clean:
 # Not a target:
 src/main.cpp:
 #  Implicit rule search has been done.
-#  Last modified 2021-07-06 18:56:53.407989
+#  Last modified 2021-07-06 18:56:53
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 src/Application.cpp:
 #  Implicit rule search has been done.
-#  Last modified 2021-07-06 18:56:53.407989
+#  Last modified 2021-07-09 09:29:08
 #  File has been updated.
 #  Successfully updated.
 
-Little-Turn-Game: src/main.cpp src/Application.cpp src/audio/SoundManager.cpp src/input/InputManager.cpp src/scenes/Scene.cpp src/scenes/SceneManager.cpp src/myscenes/RaylibSplashScene.cpp src/myscenes/MainMenu.cpp
+# Not a target:
+src/myscenes/MyGame.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2021-07-09 09:29:08
+#  File has been updated.
+#  Successfully updated.
+
+Little-Turn-Game: src/main.cpp src/Application.cpp src/audio/SoundManager.cpp src/input/InputManager.cpp src/scenes/Scene.cpp src/scenes/SceneManager.cpp src/myscenes/MyGame.cpp src/myscenes/RaylibSplashScene.cpp src/myscenes/MainMenu.cpp
 #  Command line target.
 #  Implicit rule search has not been done.
 #  Implicit/static pattern stem: ''
-#  Last modified 2021-07-08 16:31:03.375418556
+#  File does not exist.
 #  File has been updated.
 #  Needs to be updated (-q is set).
 # automatic
@@ -432,15 +446,15 @@ Little-Turn-Game: src/main.cpp src/Application.cpp src/audio/SoundManager.cpp sr
 # automatic
 # * := 
 # automatic
-# + := src/main.cpp src/Application.cpp src/audio/SoundManager.cpp src/input/InputManager.cpp src/scenes/Scene.cpp src/scenes/SceneManager.cpp src/myscenes/RaylibSplashScene.cpp src/myscenes/MainMenu.cpp
+# + := src/main.cpp src/Application.cpp src/audio/SoundManager.cpp src/input/InputManager.cpp src/scenes/Scene.cpp src/scenes/SceneManager.cpp src/myscenes/MyGame.cpp src/myscenes/RaylibSplashScene.cpp src/myscenes/MainMenu.cpp
 # automatic
 # | := 
 # automatic
 # < := src/main.cpp
 # automatic
-# ^ := src/main.cpp src/Application.cpp src/audio/SoundManager.cpp src/input/InputManager.cpp src/scenes/Scene.cpp src/scenes/SceneManager.cpp src/myscenes/RaylibSplashScene.cpp src/myscenes/MainMenu.cpp
+# ^ := src/main.cpp src/Application.cpp src/audio/SoundManager.cpp src/input/InputManager.cpp src/scenes/Scene.cpp src/scenes/SceneManager.cpp src/myscenes/MyGame.cpp src/myscenes/RaylibSplashScene.cpp src/myscenes/MainMenu.cpp
 # automatic
-# ? := src/myscenes/MainMenu.cpp
+# ? := src/main.cpp src/Application.cpp src/audio/SoundManager.cpp src/input/InputManager.cpp src/scenes/Scene.cpp src/scenes/SceneManager.cpp src/myscenes/MyGame.cpp src/myscenes/RaylibSplashScene.cpp src/myscenes/MainMenu.cpp
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=23/35=66%
 #  recipe to execute (from 'Makefile', line 400):
@@ -449,25 +463,25 @@ Little-Turn-Game: src/main.cpp src/Application.cpp src/audio/SoundManager.cpp sr
 # Not a target:
 src/input/InputManager.cpp:
 #  Implicit rule search has been done.
-#  Last modified 2021-07-06 18:56:53.407989
+#  Last modified 2021-07-06 18:56:53
 #  File has been updated.
 #  Successfully updated.
 
 # files hash-table stats:
-# Load=16/1024=2%, Rehash=0, Collisions=1/40=2%
+# Load=17/1024=2%, Rehash=0, Collisions=1/42=2%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 72 / storage = 928 B / avg = 12 B
-# current buf: size = 8162 B / used = 928 B / count = 72 / avg = 12 B
+# strcache buffers: 1 (0) / strings = 75 / storage = 984 B / avg = 13 B
+# current buf: size = 8162 B / used = 984 B / count = 75 / avg = 13 B
 
-# strcache performance: lookups = 101 / hit rate = 28%
+# strcache performance: lookups = 103 / hit rate = 27%
 # hash-table stats:
-# Load=72/8192=1%, Rehash=0, Collisions=8/101=8%
-# Finished Make data base on Thu Jul  8 16:33:03 2021
+# Load=75/8192=1%, Rehash=0, Collisions=8/103=8%
+# Finished Make data base on Mon Jul 12 09:01:42 2021
 
 # make[1]: Leaving directory '/home/alex/Dropbox/dev/silver-palm-tree'
 # GNU Make 4.2.1
@@ -477,8 +491,7 @@ src/input/InputManager.cpp:
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu Jul  8 16:33:03 2021
- 
+# Make data base, printed on Mon Jul 12 09:01:42 2021
 
 # Variables
 
@@ -533,7 +546,7 @@ OPTIMIZATION := -O0
 # makefile (from 'Makefile', line 225)
 CFLAGS = -Wall -Wextra -std=c++17 -D_DEFAULT_SOURCE -Wno-missing-braces $(OPTIMIZATION) -s -O1 -D_DEFAULT_SOURCE
 # environment
-JOURNAL_STREAM = 8:52572
+JOURNAL_STREAM = 8:46677
 # environment
 XDG_CONFIG_DIRS = /etc/xdg/xdg-pop:/etc/xdg
 # makefile (from 'Makefile', line 1)
@@ -543,9 +556,13 @@ MAKEFILE_LIST :=  Makefile
 # environment
 GIO_LAUNCHED_DESKTOP_FILE = /usr/share/applications/code.desktop
 # environment
+DEBUG = WARN
+# environment
 USERNAME = alex
 # environment
 MAKELEVEL := 0
+# environment
+MANDATORY_PATH = /usr/share/gconf/pop.mandatory.path
 # environment
 XDG_DATA_DIRS = /usr/share/pop:/home/alex/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share
 # environment
@@ -557,9 +574,10 @@ BUILD_MODE = RELEASE
 # makefile (from 'Makefile', line 379)
 PROJECT_SOURCE_FILES = $(wildcard src/*.cpp src/audio/*.cpp src/input/*.cpp src/graphics/*.cpp src/scenes/*.cpp src/ecs/*.cpp src/myscenes/*.cpp)
 # makefile (from 'Makefile', line 382)
+ 
 OBJS = $(patsubst %.c, %.o, $(PROJECT_SOURCE_FILES))
 # environment
-MANAGERPID = 1567
+MANAGERPID = 1665
 # environment
 LESSOPEN = | /usr/bin/lesspipe %s
 # environment
@@ -571,7 +589,7 @@ OUTPUT_TEMP_PATH = ../temp
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
-PATH = /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+PATH = /home/alex/.local/bin:/home/alex/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
 # makefile (from 'Makefile', line 75)
 UNAMEOS = $(shell uname)
 # environment
@@ -579,7 +597,7 @@ GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
 GJS_DEBUG_OUTPUT = stderr
 # environment
-SESSION_MANAGER = local/pop-os:@/tmp/.ICE-unix/2299,unix/pop-os:/tmp/.ICE-unix/2299
+SESSION_MANAGER = local/cesium:@/tmp/.ICE-unix/2544,unix/cesium:/tmp/.ICE-unix/2544
 # makefile (from 'Makefile', line 115)
 RAYLIB_PATH = $(realpath $(RAYLIB_PREFIX))
 # environment
@@ -589,9 +607,9 @@ XDG_MENU_PREFIX = gnome-
 # environment
 VSCODE_LOG_STACK = false
 # environment
-VSCODE_CRASH_REPORTER_START_OPTIONS = {"companyName":"Microsoft","productName":"VSCode","submitURL":"appcenter://code?aid=fba07a4d-84bd-4fc8-a125-9640fc8ce171&uid=1da83201-7911-475f-a98c-4e0945a8c764&iid=1da83201-7911-475f-a98c-4e0945a8c764&sid=1da83201-7911-475f-a98c-4e0945a8c764","uploadToServer":true}
+VSCODE_CRASH_REPORTER_START_OPTIONS = {"companyName":"Microsoft","productName":"VSCode","submitURL":"appcenter://code?aid=fba07a4d-84bd-4fc8-a125-9640fc8ce171&uid=2a5b41f3-115b-447c-a551-d5be6679f9ef&iid=2a5b41f3-115b-447c-a551-d5be6679f9ef&sid=2a5b41f3-115b-447c-a551-d5be6679f9ef","uploadToServer":true}
 # environment
-INVOCATION_ID = af6987f921be463dbb6591fd29bf82c7
+INVOCATION_ID = b871033c46c042328bbaa50e32ab6098
 # makefile (from 'Makefile', line 305)
 LDFLAGS = -L. -L$(RAYLIB_INSTALL_PATH) -L$(RAYLIB_RELEASE_PATH) -L$(RAYLIB_PATH)
 # makefile (from 'Makefile', line 329)
@@ -607,7 +625,7 @@ XDG_SESSION_DESKTOP = pop
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 3702
+GIO_LAUNCHED_DESKTOP_FILE_PID = 12057
 # automatic
 %F = $(notdir $%)
 # environment
@@ -621,7 +639,7 @@ PWD = /home/alex/Dropbox/dev/silver-palm-tree
 # default
 .LOADED := 
 # environment
-SSH_AGENT_PID = 2076
+SSH_AGENT_PID = 2257
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = pop:GNOME
 # environment
@@ -665,7 +683,7 @@ GNOME_SHELL_SESSION_MODE = pop
 # makefile (from 'Makefile', line 52)
 RAYLIB_H_INSTALL_PATH = $(DESTDIR)/include
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-1f91db3f-d378-4a8c-9532-6456cf471015.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-0c76011c-ff40-4fa1-8842-5f414f613a87.sock
 # default
 MAKE_VERSION := 4.2.1
 # environment
@@ -712,6 +730,8 @@ LC_PAPER = en_US.UTF-8
 EXAMPLE_RUNTIME_PATH = $(RAYLIB_RELEASE_PATH)
 # environment
 QT_ACCESSIBILITY = 1
+# environment
+DEFAULTS_PATH = /usr/share/gconf/pop.default.path
 # makefile (from 'Makefile', line 38)
 PLATFORM = PLATFORM_DESKTOP
 # 'override' directive
@@ -757,10 +777,9 @@ LC_ADDRESS = en_US.UTF-8
 # environment
 LANG = C
 # environment
-VSCODE_PID = 3702
+VSCODE_PID = 12057
 # variable set hash-table stats:
- 
-# Load=138/1024=13%, Rehash=0, Collisions=32/284=11%
+# Load=141/1024=14%, Rehash=0, Collisions=32/287=11%
 
 # Pattern-specific Variable Values
 
@@ -768,16 +787,16 @@ VSCODE_PID = 3702
 
 # Directories
 
-# src/scenes (device 2049, inode 12190549): 6 files, no impossibilities.
-# . (device 2049, inode 11797336): 14 files, no impossibilities.
-# src/myscenes (device 2049, inode 12190544): 7 files, no impossibilities.
-# src/input (device 2049, inode 12190541): 4 files, no impossibilities.
-# src/graphics (device 2049, inode 12061997): 3 files, no impossibilities.
-# src/audio (device 2049, inode 12061941): 4 files, no impossibilities.
-# src (device 2049, inode 12061931): 13 files, no impossibilities.
-# src/ecs (device 2049, inode 12061952): 11 files, no impossibilities.
+# src/scenes (device 2051, inode 11797295): 6 files, no impossibilities.
+# . (device 2051, inode 11797276): 14 files, no impossibilities.
+# src/myscenes (device 2051, inode 11797310): 8 files, no impossibilities.
+# src/input (device 2051, inode 11797297): 4 files, no impossibilities.
+# src/graphics (device 2051, inode 11797294): 3 files, no impossibilities.
+# src/audio (device 2051, inode 11797306): 4 files, no impossibilities.
+# src (device 2051, inode 11797281): 13 files, no impossibilities.
+# src/ecs (device 2051, inode 11797302): 11 files, no impossibilities.
 
-# 62 files, no impossibilities in 8 directories.
+# 63 files, no impossibilities in 8 directories.
 
 # Implicit Rules
 
@@ -834,6 +853,7 @@ src/myscenes/MainMenu.cpp:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
+ 
 
 # Not a target:
 src/scenes/SceneManager.cpp:
@@ -850,7 +870,7 @@ src/scenes/SceneManager.cpp:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2021-07-08 16:15:42.622933552
+#  Last modified 2021-07-09 09:29:08
 #  File has been updated.
 #  Successfully updated.
 
@@ -902,7 +922,13 @@ src/Application.cpp:
 #  Modification time never checked.
 #  File has not been updated.
 
-Little-Turn-Game: src/main.cpp src/Application.cpp src/audio/SoundManager.cpp src/input/InputManager.cpp src/scenes/Scene.cpp src/scenes/SceneManager.cpp src/myscenes/RaylibSplashScene.cpp src/myscenes/MainMenu.cpp
+# Not a target:
+src/myscenes/MyGame.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+Little-Turn-Game: src/main.cpp src/Application.cpp src/audio/SoundManager.cpp src/input/InputManager.cpp src/scenes/Scene.cpp src/scenes/SceneManager.cpp src/myscenes/MyGame.cpp src/myscenes/RaylibSplashScene.cpp src/myscenes/MainMenu.cpp
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -916,19 +942,19 @@ src/input/InputManager.cpp:
 #  File has not been updated.
 
 # files hash-table stats:
-# Load=16/1024=2%, Rehash=0, Collisions=1/40=2%
+# Load=17/1024=2%, Rehash=0, Collisions=1/42=2%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 72 / storage = 928 B / avg = 12 B
-# current buf: size = 8162 B / used = 928 B / count = 72 / avg = 12 B
+# strcache buffers: 1 (0) / strings = 75 / storage = 984 B / avg = 13 B
+# current buf: size = 8162 B / used = 984 B / count = 75 / avg = 13 B
 
-# strcache performance: lookups = 101 / hit rate = 28%
+# strcache performance: lookups = 103 / hit rate = 27%
 # hash-table stats:
-# Load=72/8192=1%, Rehash=0, Collisions=8/101=8%
-# Finished Make data base on Thu Jul  8 16:33:03 2021
+# Load=75/8192=1%, Rehash=0, Collisions=8/103=8%
+# Finished Make data base on Mon Jul 12 09:01:42 2021
 
  

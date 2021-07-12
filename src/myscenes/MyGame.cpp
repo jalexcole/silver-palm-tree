@@ -8,7 +8,7 @@ MyGame::MyGame() {
 
 }
 
-void initialize() {
+void MyGame::initialize() {
     int length = 128;
     int height = 64;
 
@@ -28,15 +28,15 @@ void MyGame::update() {
 void MyGame::draw() {
     // Vector2 size = {128, 128};
     
-
-    for (int j = 0; j < 720; j++) {
-        for (int i = 0; i < 1280; i++) {
+    for (int i = 0; i < 1280; i++) {
+        for (int j = 0; j < 720; j++) {
+        
         if ( (int) (i + j * 720) % 2 == 0) {
             color = GRAY;
         } else {
             color = BLUE;
         }
-        DrawRectangle(j, i, 1, 1, color);
+        DrawRectangle(i, j, 1, 1, color);
 
         }
     }
